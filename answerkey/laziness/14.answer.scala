@@ -5,9 +5,3 @@ def startsWith[A](s: Stream[A]): Boolean =
   zipAll(s).takeWhile(!_._2.isEmpty) forAll {
     case (h,h2) => h == h2
   }
-
-def startsWith1[A](s: Stream[A]): Boolean = 
-  zipAll(s).forAll {
-    case (Some(a), Some(b)) => a == b
-    case _ => false
-  }
